@@ -1,6 +1,8 @@
 # OpenCasemix
 
-### [Read more](https://shamsulamri.github.io/casemix)
+## Business intelligence for healthcare
+
+### [https://shamsulamri.github.io/casemix](https://shamsulamri.github.io/casemix)
 
 This project contains sample dataset to build a casemix application.
 
