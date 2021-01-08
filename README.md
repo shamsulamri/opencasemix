@@ -1,5 +1,7 @@
 # OpenCasemix
 
+### [Read more](https://shamsulamri.github.io/casemix)
+
 This project contains sample dataset to build a casemix application.
 
 - Major Diagnostic Criteria (MDC)
