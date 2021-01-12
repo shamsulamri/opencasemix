@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jan 08, 2021 at 03:46 PM
+-- Generation Time: Jan 12, 2021 at 03:32 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.6
 
@@ -63,20 +63,46 @@ INSERT INTO `drg` (`drg_code`, `drg_base`, `drg_severity`, `mdc_code`, `drg_type
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `drg_bases`
+--
+
+CREATE TABLE `drg_bases` (
+  `base_code` varchar(10) NOT NULL,
+  `mdc_code` varchar(5) NOT NULL,
+  `base_name` varchar(200) NOT NULL,
+  `base_type` varchar(10) NOT NULL,
+  `gender_code` varchar(10) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `drg_bases`
+--
+
+INSERT INTO `drg_bases` (`base_code`, `mdc_code`, `base_name`, `base_type`, `gender_code`) VALUES
+('0201', '02', 'ORBITAL PROCEDURES', 'SURG', 'male'),
+('0202', '02', 'EXTRAOCULAR PROCEDURES EXCEPT ORBIT', 'SURG', NULL),
+('0203', '02', 'INTRAOCULAR PROCEDURES', 'SURG', NULL),
+('0204', '02', 'ACUTE MAJOR EYE INFECTIONS', 'MED', NULL),
+('0205', '02', 'NEUROLOGICAL EYE DISORDERS', 'MED', NULL),
+('0206', '02', 'OTHER DISORDERS OF THE EYE', 'MED', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `drg_cast`
 --
 
 CREATE TABLE `drg_cast` (
   `cast_id` int(11) NOT NULL,
   `cast_code` varchar(10) NOT NULL,
-  `drg_base` varchar(10) NOT NULL
+  `base_code` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `drg_cast`
 --
 
-INSERT INTO `drg_cast` (`cast_id`, `cast_code`, `drg_base`) VALUES
+INSERT INTO `drg_cast` (`cast_id`, `cast_code`, `base_code`) VALUES
 (1, '16.99', '0201'),
 (2, '16.98', '0201'),
 (3, '16.93', '0201'),
@@ -790,6 +816,13 @@ INSERT INTO `mdc` (`mdc_code`, `mdc_name`) VALUES
 --
 ALTER TABLE `drg`
   ADD PRIMARY KEY (`drg_code`);
+
+--
+-- Indexes for table `drg_bases`
+--
+ALTER TABLE `drg_bases`
+  ADD PRIMARY KEY (`base_code`),
+  ADD KEY `base_code` (`base_code`);
 
 --
 -- Indexes for table `drg_cast`
