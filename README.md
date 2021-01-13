@@ -12,9 +12,10 @@ This project contains sample dataset to build a casemix application.
 
 ## Requirement
 
-MySQL Database
++ MySQL Database
++ Jupyter Notebook
 
 ## Installation
 
-Run the sql file included in the project (opencasemix.sql) to restore the database.
+Run the sql file included in the project (opencasemix.sql) to restore the database and open the grouper.ipynb in your jupyter notebook.
 
